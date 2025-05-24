@@ -1,98 +1,82 @@
-import React from "react";
-import { FaLongArrowAltRight } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+const images = [
+  "https://res.cloudinary.com/jatincloud809/image/upload/v1748003834/Archiever%20property/xsbi6ahtgoiygxgqppb5.jpg",
+  "https://res.cloudinary.com/jatincloud809/image/upload/v1748003834/Archiever%20property/acnzvg3aldyidvhtmxpz.jpg",
+  "https://res.cloudinary.com/jatincloud809/image/upload/v1748003834/Archiever%20property/s0aic4udlbqcbcbj45yr.jpg",
+  "https://res.cloudinary.com/jatincloud809/image/upload/v1748003834/Archiever%20property/z79woblg2p6co2qrble8.jpg",
+  "https://res.cloudinary.com/jatincloud809/image/upload/v1748004236/Archiever%20property/y2leatxdtm9tzlnmfkn7.jpg",
+  "https://res.cloudinary.com/jatincloud809/image/upload/v1748004236/Archiever%20property/zkyuuwrpjggyqhqsa9wh.jpg",
+  "https://res.cloudinary.com/jatincloud809/image/upload/v1748004237/Archiever%20property/l7ap4803kbrfvaufnzh4.jpg",
+  "https://res.cloudinary.com/jatincloud809/image/upload/v1748004237/Archiever%20property/kcnvw6xpptisjnzhdf9q.jpg",
+  "https://res.cloudinary.com/jatincloud809/image/upload/v1748004237/Archiever%20property/ynuuqxcyic1r7michgzl.jpg",
+];
+
 const ExploreMore = () => {
-  const cardVariants = {
-    hidden: { opacity: 0, y: 100 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount =
+    window.innerWidth < 640 ? 1 : window.innerWidth < 768 ? 2 : 4;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStartIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getVisibleImages = () => {
+    return Array.from({ length: visibleCount }).map(
+      (_, i) => images[(startIndex + i) % images.length]
+    );
   };
 
   return (
-    <div className="px-4 md:px-20 max-w-7xl mx-auto">
-      <div className="text-center space-y-4 md:space-y-6 py-8">
-        <p className="text-sm md:text-base uppercase tracking-wide text-gray-700">
-          More to know
-        </p>
-        <p className="text-3xl md:text-5xl font-semibold leading-snug">
-          Exceptional Locations, <br /> Unrivaled Lifestyles.
-        </p>
-        <p className="max-w-3xl mx-auto text-gray-500 text-sm md:text-base">
-          Conceived in the belief that home and living in full are inextricably
-          entwined, RESIDE® is the Sotheby’s International Realty brand’s
-          magazine devoted to the finest in inspirational locales and
-          lifestyles.
-        </p>
-        <button className="mt-4 px-6 py-2 border rounded-2xl font-semibold inline-flex items-center gap-2 hover:bg-gray-100 transition">
-          Explore more <FaLongArrowAltRight />
-        </button>
+    <div className="relative pb-16">
+      {/* Background Image - full screen width */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <img
+          src="https://res.cloudinary.com/jatincloud809/image/upload/v1748072170/Archiever%20property/yaoglnx9ufehvp92fxgr.webp"
+          alt="Background"
+          className="w-full h-full object-cover opacity-5 pointer-events-none"
+        />
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between gap-10 py-16">
-        {/* Card 1 */}
-        <motion.div
-          className="text-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={cardVariants}
-        >
-          <img
-            src="https://img-v2.gtsstatic.net/reno/imagereader.aspx?imageurl=https%3A%2F%2Fapi.sothebysrealty.com%2Fresources%2Fsiteresources%2Fmy%20folder%2Fstatic-pages%2Freside-magazine%2Freside-march2023%2Fcover%2FRESIDE-MARCH-2023-COVER.jpg%26option%3DN%26w%3D200&option=N&h=353&permitphotoenlargement=false"
-            alt="RESIDE Magazine"
-            className="w-full max-w-xs md:max-w-sm mx-auto rounded shadow-lg"
-          />
-          <p className="text-2xl mt-4 font-semibold">RESIDE Magazine</p>
-          <p className="text-gray-500 mt-1 text-sm md:text-base">
-            Exceptional location, Unrivaled lifestyle
+      {/* Foreground Content - centered inside max width */}
+      <div className="relative z-10 px-4 md:px-20 max-w-7xl mx-auto">
+        <div className="text-center space-y-4 md:space-y-6 py-8">
+          <p className="text-sm md:text-base uppercase tracking-wide text-gray-700">
+            More to know
           </p>
-        </motion.div>
+          <p className="text-3xl md:text-5xl font-semibold leading-snug">
+            अपने प्लाट पर <br /> तुरंत निर्माण प्रारंभ करे |
+          </p>
+          <p className="max-w-3xl mx-auto text-gray-900 text-lg md:text-base">
+            52, Sewla Kalan, Shimla Bypass Road Opp. Urban Buy, Dehradun,
+          </p>
+        </div>
 
-        {/* Card 2 */}
-        <motion.div
-          className="text-center pt-8 md:pt-0"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={cardVariants}
-        >
-          <img
-            src="https://img-v2.gtsstatic.net/reno/imagereader.aspx?imageurl=https%3A%2F%2Fapi.sothebysrealty.com%2Fresources%2Fsiteresources%2FMy%20Folder%2Fstatic-pages%2Fluxury-outlook%2Fluxury-outlook-2023%2Fcover%2Fheader_luxoutlook.jpg&option=N&h=353&permitphotoenlargement=false"
-            alt="Luxury Outlook"
-            className="w-full max-w-xs md:max-w-sm mx-auto rounded shadow-lg"
-          />
-          <p className="text-2xl mt-4 font-semibold">Luxury Outlook</p>
-          <p className="text-gray-500 mt-1 text-sm md:text-base">
-            An ambitious exploration into high and residential markets across
-            the globe
-          </p>
-        </motion.div>
-
-        {/* Card 3 */}
-        <motion.div
-          className="text-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={cardVariants}
-        >
-          <img
-            src="https://img-v2.gtsstatic.net/reno/imagereader.aspx?imageurl=https%3A%2F%2Fapi.sothebysrealty.com%2Fresources%2Fsiteresources%2FMy%20Folder%2FhugeImages%2Fhomepage%2Freside%2Fvirtual.jpg&option=N&h=353&permitphotoenlargement=false"
-            alt="Virtual Homes"
-            className="w-full max-w-xs md:max-w-sm mx-auto rounded shadow-lg"
-          />
-          <p className="text-2xl mt-4 font-semibold">
-            View Homes, From the comfort of Yours
-          </p>
-          <p className="text-gray-500 mt-1 text-sm md:text-base">
-            Experience luxury homes like never before, all from the comfort of
-            yours
-          </p>
-        </motion.div>
+        <div className="relative overflow-hidden">
+          <motion.div
+            key={startIndex}
+            className="flex gap-4 sm:gap-6"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+          >
+            {getVisibleImages().map((src, index) => (
+              <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
+                <div className="bg-white border border-green-700 rounded-2xl shadow-lg overflow-hidden h-full flex items-center justify-center">
+                  <img
+                    src={src}
+                    alt={`carousel-${index}`}
+                    className="w-full h-64 sm:h-72 md:h-96 object-cover rounded-2xl"
+                  />
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </div>
   );

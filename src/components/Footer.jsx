@@ -13,11 +13,16 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10">
         {/* Brand */}
         <div>
-          <div className="text-white text-xl font-bold mb-4 flex items-center gap-2">
-            <span className="text-blue-500 text-2xl">🏡</span> RESIDE Realty
+          <div className="text-white text-lg font-bold mb-4 flex items-center gap-2">
+            <img
+              className="h-12 w-auto"
+              src="https://res.cloudinary.com/jatincloud809/image/upload/v1748065028/Archiever%20property/srlsbfp2hizvo1xmh0b9.png"
+              alt=""
+            />
+            Achiever Building Solution Pvt. Ltd.
           </div>
           <p className="mb-4 text-sm sm:text-base">
-            Connecting you with exceptional properties and lifestyles worldwide.
+            अपने प्लॉट पर तुरंत निर्माण प्रारम्भ करे ।
           </p>
           <div className="flex gap-4 text-white text-lg">
             <a
@@ -136,7 +141,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-12 border-t border-gray-700 pt-6 text-center text-xs sm:text-sm text-gray-500">
-        © 2025 JATIN SHAKYA. All rights reserved.
+        © 2025 WebMetrixSolutions. All rights reserved.
       </div>
     </footer>
   );

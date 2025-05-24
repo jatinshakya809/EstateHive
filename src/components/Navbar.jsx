@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { FiX, FiMenu } from "react-icons/fi";
 import { IoMdSettings } from "react-icons/io";
 import { IoSearchSharp } from "react-icons/io5";
@@ -18,10 +19,12 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`border-b-2 border-gray-500`}>
+    <nav className={`border-b border-gray-400`}>
       {/* Top Bar */}
       <div className="h-[6vh] font-medium gap-5 bg-gray-900 justify-center flex items-center text-xs sm:text-sm">
-        <div className="text-white cursor-pointer">Join / Log In</div>
+        <Link to="/inquiryForm" className="text-white cursor-pointer">
+          Enquire Now
+        </Link>
         <div className="text-white gap-2 items-center flex cursor-pointer">
           <IoMdSettings className="inline text-white" /> Preferences
         </div>
@@ -30,22 +33,36 @@ const Navbar = () => {
       {/* Main Navbar */}
       <div className="h-[14vh] flex items-center justify-between px-4 sm:px-12 bg-[#1F7D53] text-white">
         {/* Logo */}
-        <div className="text-2xl font-bold">EstateHive</div>
+        <Link to="/" className="flex items-center gap-2 text-2xl font-bold">
+          <img
+            src="https://res.cloudinary.com/jatincloud809/image/upload/v1748065028/Archiever%20property/srlsbfp2hizvo1xmh0b9.png"
+            alt="Company Logo"
+            className="h-12 w-auto" // Adjust height as needed
+            // Ensures white bg is preserved
+          />
+          Achiever Building Solution Pvt. Ltd.
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-6 uppercase text-sm">
           <li className="flex items-center gap-1 cursor-pointer pb-2 border-b-2 border-transparent hover:border-yellow-500 transition-all">
             <IoSearchSharp /> Search
           </li>
-          <li className="cursor-pointer pb-2 border-b-2 border-transparent hover:border-yellow-500 transition-all">
+          <Link
+            to="/properties"
+            className="cursor-pointer pb-2 border-b-2 border-transparent hover:border-yellow-500 transition-all"
+          >
             Properties
-          </li>
-          <li className="cursor-pointer pb-2 border-b-2 border-transparent hover:border-yellow-500 transition-all">
+          </Link>
+          <Link className="cursor-pointer pb-2 border-b-2 border-transparent hover:border-yellow-500 transition-all">
             Agents
-          </li>
-          <li className="cursor-pointer pb-2 border-b-2 border-transparent hover:border-yellow-500 transition-all">
+          </Link>
+          <Link
+            to="/story"
+            className="cursor-pointer pb-2 border-b-2 border-transparent hover:border-yellow-500 transition-all"
+          >
             Stories
-          </li>
+          </Link>
         </ul>
 
         {/* Desktop Button */}
@@ -66,18 +83,37 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#1F7D53] text-white px-4 py-4 space-y-4 uppercase text-base">
-          <div className="flex items-center gap-2 cursor-pointer border-b border-yellow-500 pb-2">
+          <Link
+            to="/search" // assuming you have a search page route
+            className="flex items-center gap-2 border-b border-yellow-500 pb-2"
+            onClick={() => setMobileMenuOpen(false)} // close menu on click
+          >
             <IoSearchSharp /> Search
-          </div>
-          <div className="cursor-pointer border-b border-yellow-500 pb-2">
+          </Link>
+
+          <Link
+            to="/properties"
+            className="block border-b border-yellow-500 pb-2"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             Properties
-          </div>
-          <div className="cursor-pointer border-b border-yellow-500 pb-2">
+          </Link>
+
+          <Link
+            className="block border-b border-yellow-500 pb-2"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             Agents
-          </div>
-          <div className="cursor-pointer border-b border-yellow-500 pb-2">
+          </Link>
+
+          <Link
+            to="/story"
+            className="block border-b border-yellow-500 pb-2"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             Stories
-          </div>
+          </Link>
+
           <button className="w-full mt-2 px-4 py-2 border border-yellow-300 uppercase cursor-pointer text-white hover:text-orange-200 transition">
             Sell with Us
           </button>
