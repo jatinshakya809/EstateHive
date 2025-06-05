@@ -22,7 +22,7 @@ const About = () => {
         {/* Video 1 (Landscape) */}
         <motion.div
           initial={{ opacity: 0, translateX: -100 }}
-          animate={isInView ? { opacity: 1, translateX: 0 } : {}}
+          whileInView={{ opacity: 1, translateX: 0 }}
           transition={{ duration: 0.7 }}
           className="w-full md:w-1/3 rounded-lg shadow-2xl overflow-hidden min-h-[300px]"
         >
@@ -68,7 +68,7 @@ const About = () => {
         {/* Video 2 (Portrait) */}
         <motion.div
           initial={{ opacity: 0, translateX: 100 }}
-          animate={isInView ? { opacity: 1, translateX: 0 } : {}}
+          whileInView={{ opacity: 1, translateX: 0 }}
           transition={{ duration: 0.7 }}
           className="w-full md:w-1/3 rounded-lg shadow-lg overflow-hidden flex justify-center items-center min-h-[300px]"
         >
