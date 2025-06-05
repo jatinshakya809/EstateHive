@@ -31,7 +31,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <div className="h-[14vh] flex items-center justify-between px-4 sm:px-12 bg-[#1F7D53] text-white">
+      <div className="h-[14vh] flex items-center justify-between px-4 sm:px-12 bg-[#228B22] text-white">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 text-2xl font-bold">
           <img
@@ -54,8 +54,11 @@ const Navbar = () => {
           >
             Properties
           </Link>
-          <Link className="cursor-pointer pb-2 border-b-2 border-transparent hover:border-yellow-500 transition-all">
-            Agents
+          <Link
+            to="/agents"
+            className="cursor-pointer pb-2 border-b-2 border-transparent hover:border-yellow-500 transition-all"
+          >
+            About Us
           </Link>
           <Link
             to="/story"
@@ -66,9 +69,9 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop Button */}
-        <button className="hidden md:inline-block ml-6 px-4 py-2 border border-yellow-300 uppercase cursor-pointer text-white hover:text-orange-200 transition">
+        {/* <button className="hidden md:inline-block ml-6 px-4 py-2 border border-yellow-300 uppercase cursor-pointer text-white hover:text-orange-200 transition">
           Sell with Us
-        </button>
+        </button> */}
 
         {/* Mobile Menu Toggle Button */}
         <button

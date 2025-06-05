@@ -41,7 +41,7 @@ const Properties = () => {
   return (
     <div>
       {/* Top Navbar with State Links */}
-      <div className="h-[8vh] border-b-2 flex justify-between items-center px-4 sm:px-8 bg-[#1F7D53] overflow-x-auto no-scrollbar whitespace-nowrap">
+      <div className="h-[8vh] border-b-2 flex justify-between items-center px-4 sm:px-8 bg-[#228B22] overflow-x-auto no-scrollbar whitespace-nowrap">
         {states.map((state, index) => (
           <span
             key={index}
@@ -157,7 +157,7 @@ const Properties = () => {
 
       {/* Property Listings */}
       <div className="my-8 p-4 md:px-12">
-        <h2 className="text-2xl font-semibold text-[#1F7D53] mb-6">
+        <h2 className="text-2xl font-semibold text-white mb-6">
           Properties in {selectedState.replace(/([A-Z])/g, " $1").trim()}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

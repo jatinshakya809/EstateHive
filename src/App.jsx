@@ -9,6 +9,7 @@ import Properties from "./components/Property/Properties";
 import Story from "./components/Stories/Story";
 import MyMap from "./components/Gmap/MyMap";
 import StickyIcons from "./components/StickyIcons.jsx/StickyIcons";
+import IntroVideo from "./components/IntroVideo/IntroVideo";
 
 const App = () => {
   useEffect(() => {
@@ -25,12 +26,13 @@ const App = () => {
 
   return (
     <Router>
+      <IntroVideo />
       <Navbar />
       <Routes>
         <Route element={<LandingPage />} path="/" />
         <Route element={<InquiryForm />} path="/inquiryForm" />
         <Route element={<Story />} path="/story" />
-        {/* <Route element={<AgentsPage />} path="/agents" /> */}
+        <Route element={<AgentsPage />} path="/agents" />
         <Route element={<Properties />} path="/properties" />
       </Routes>
       <StickyIcons />

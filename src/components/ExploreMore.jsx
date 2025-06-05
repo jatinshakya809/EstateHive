@@ -32,7 +32,7 @@ const ExploreMore = () => {
   };
 
   return (
-    <div className="relative pb-16">
+    <div className="relative pb-16 lg:px-12">
       {/* Background Image - full screen width */}
       <div className="absolute inset-0 w-full h-full z-0">
         <img
@@ -45,13 +45,13 @@ const ExploreMore = () => {
       {/* Foreground Content - centered inside max width */}
       <div className="relative z-10 px-4 md:px-20 max-w-7xl mx-auto">
         <div className="text-center space-y-4 md:space-y-6 py-8">
-          <p className="text-sm md:text-base uppercase tracking-wide text-gray-700">
+          <p className="text-sm md:text-base uppercase tracking-wide text-white">
             More to know
           </p>
-          <p className="text-3xl md:text-5xl font-semibold leading-snug">
+          <p className="text-3xl text-white md:text-5xl font-semibold leading-snug">
             अपने प्लाट पर <br /> तुरंत निर्माण प्रारंभ करे |
           </p>
-          <p className="max-w-3xl mx-auto text-gray-900 text-lg md:text-base">
+          <p className="max-w-3xl mx-auto text-white text-lg md:text-base">
             52, Sewla Kalan, Shimla Bypass Road Opp. Urban Buy, Dehradun,
           </p>
         </div>
