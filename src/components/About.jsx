@@ -6,7 +6,6 @@ import { motion, useInView } from "framer-motion";
 const About = () => {
   const videoUrlLandscape =
     "https://res.cloudinary.com/jatincloud809/video/upload/v1749100329/Archiever%20property/r2z2dvtfhdbadt7fogj6.mp4";
-
   const videoUrlPortrait =
     "https://res.cloudinary.com/jatincloud809/video/upload/v1749100140/Archiever%20property/tomb5t2hisjvzyxe8pvp.mp4";
 
@@ -14,26 +13,27 @@ const About = () => {
   const isInView = useInView(ref, { once: true, threshold: 0.2 });
 
   return (
-    <div className="max-w-7xl mx-auto my-16 px-4 sm:px-6 lg:px-20">
+    <div className="max-w-7xl mx-auto my-16 px-4 sm:px-6 lg:px-20 overflow-hidden">
       {/* Top Section */}
       <div
         ref={ref}
-        className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 px-4 md:px-12 py-10"
+        className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 px-4 md:px-12 py-10 overflow-hidden"
       >
         {/* Video 1 (Landscape) */}
         <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          animate={isInView ? { x: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-full md:w-1/3 rounded overflow-hidden shadow-2xl"
+          initial={{ opacity: 0, translateX: -100 }}
+          animate={isInView ? { opacity: 1, translateX: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="w-full md:w-1/3 rounded-lg shadow-2xl overflow-hidden min-h-[300px]"
         >
           <ReactPlayer
             url={videoUrlLandscape}
-            playing={true}
-            loop={true}
-            muted={true}
+            playing
+            loop
+            muted
             width="100%"
-            height="68vh"
+            height="100%"
+            style={{ aspectRatio: "16 / 9", objectFit: "cover" }}
             config={{
               file: {
                 attributes: {
@@ -46,12 +46,12 @@ const About = () => {
 
         {/* Text Content */}
         <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="w-full md:w-1/3 text-left text-white"
+          initial={{ opacity: 0, translateY: 50 }}
+          animate={isInView ? { opacity: 1, translateY: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="w-full md:w-1/3 text-white text-center md:text-left min-h-[250px]"
         >
-          <p className="text-xl sm:text-2xl font-semibold leading-relaxed mb-4 text-center md:text-left">
+          <p className="text-xl sm:text-2xl font-semibold leading-relaxed mb-4">
             Achiever Building Solution Pvt. Ltd.
           </p>
           <div className="flex gap-3">
@@ -67,19 +67,19 @@ const About = () => {
 
         {/* Video 2 (Portrait) */}
         <motion.div
-          initial={{ x: 100, opacity: 0 }}
-          animate={isInView ? { x: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="w-full md:w-1/3 rounded overflow-hidden shadow-lg flex justify-center"
+          initial={{ opacity: 0, translateX: 100 }}
+          animate={isInView ? { opacity: 1, translateX: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="w-full md:w-1/3 rounded-lg shadow-lg overflow-hidden flex justify-center items-center min-h-[300px]"
         >
           <ReactPlayer
             url={videoUrlPortrait}
             playing
             loop
             muted
-            width="auto"
-            height="80vh"
-            style={{ maxHeight: "400px", maxWidth: "100%" }}
+            width="100%"
+            height="100%"
+            style={{ maxHeight: "400px", width: "auto", objectFit: "contain" }}
             config={{
               file: {
                 attributes: {
@@ -92,8 +92,13 @@ const About = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-col gap-8 md:flex-row md:gap-12 items-center mt-16">
-        <div className="md:w-3/5 order-2 md:order-1 w-full rounded overflow-hidden shadow-lg">
+      <div className="flex flex-col gap-8 md:flex-row md:gap-12 items-center mt-16 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, translateX: -80 }}
+          whileInView={{ opacity: 1, translateX: 0 }}
+          transition={{ duration: 0.7 }}
+          className="md:w-3/5 order-2 md:order-1 w-full rounded overflow-hidden shadow-lg"
+        >
           <ReactPlayer
             playing
             loop
@@ -101,11 +106,16 @@ const About = () => {
             url="https://res.cloudinary.com/jatincloud809/video/upload/v1747999129/Archiever%20property/rv5ys4ls2enm6hramtkz.mp4"
             width="100%"
             height="auto"
-            style={{ borderRadius: "8px" }}
+            style={{ borderRadius: "8px", aspectRatio: "16 / 9" }}
           />
-        </div>
+        </motion.div>
 
-        <div className="md:w-2/5 order-1 md:order-2 space-y-6 text-center md:text-left px-4 md:px-0">
+        <motion.div
+          initial={{ opacity: 0, translateX: 80 }}
+          whileInView={{ opacity: 1, translateX: 0 }}
+          transition={{ duration: 0.7 }}
+          className="md:w-2/5 order-1 md:order-2 space-y-6 text-center md:text-left px-4 md:px-0"
+        >
           <div className="bg-green-500 py-3 px-10 rounded-full">
             <p className="text-2xl font-bold text-white">
               Residential & Farm House
@@ -126,7 +136,7 @@ const About = () => {
               स्वच्छ वातावरण चारों ओर हरियाली
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Amenities */}
