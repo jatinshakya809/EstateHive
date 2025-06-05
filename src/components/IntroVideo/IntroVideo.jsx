@@ -15,33 +15,24 @@ const IntroVideo = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  if (!showVideo) return null;
+  // ❌ Don't show video on mobile or if manually closed
+  if (!showVideo || isMobile) return null;
 
   return (
-    <div
-      className={`fixed z-50 ${
-        isMobile
-          ? "inset-0 flex items-center justify-center p-2 bg-transparent"
-          : "bottom-4 right-20 bg-yellow-500 bg-opacity-80 p-1"
-      } shadow-lg`}
-    >
-      <div
-        className={`relative rounded-xl overflow-hidden ${
-          isMobile ? "w-[95vw] h-[60vh]" : ""
-        }`}
-      >
+    <div className="fixed bottom-4 right-20 z-50 bg-yellow-500 bg-opacity-80 p-1 shadow-lg rounded-xl">
+      <div className="relative rounded-xl overflow-hidden">
         {/* Close Button */}
         <button
           onClick={() => setShowVideo(false)}
-          className="absolute top-1 right-14 md:right-1 text-black font-extrabold text-lg  bg-opacity-60 rounded-full px-2 z-50"
+          className="absolute top-1 right-1 text-black font-extrabold text-lg bg-opacity-60 rounded-full px-2 z-50"
         >
           ✕
         </button>
 
-        {/* Sound Toggle - shown on both mobile and desktop */}
+        {/* Sound Toggle */}
         <button
           onClick={() => setIsMuted((prev) => !prev)}
-          className="absolute bottom-2 left-14 md:left-2 z-50 bg-black text-white text-sm px-2 py-1 rounded"
+          className="absolute bottom-2 left-2 z-50 bg-black text-white text-sm px-2 py-1 rounded"
         >
           {isMuted ? "🔊 Sound On" : "🔇 Mute"}
         </button>
@@ -54,7 +45,7 @@ const IntroVideo = () => {
           controls={false}
           loop
           width="100%"
-          height={isMobile ? "100%" : "50vh"}
+          height="50vh"
           style={{ borderRadius: "0.5rem" }}
           config={{
             file: {

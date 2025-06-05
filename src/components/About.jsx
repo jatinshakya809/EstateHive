@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import ReactPlayer from "react-player";
 import { GoDotFill } from "react-icons/go";
+import { motion, useInView } from "framer-motion";
 
 const About = () => {
   const videoUrlLandscape =
@@ -9,19 +10,30 @@ const About = () => {
   const videoUrlPortrait =
     "https://res.cloudinary.com/jatincloud809/video/upload/v1749100140/Archiever%20property/tomb5t2hisjvzyxe8pvp.mp4";
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, threshold: 0.2 });
+
   return (
     <div className="max-w-7xl mx-auto my-16 px-4 sm:px-6 lg:px-20">
       {/* Top Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 px-4 md:px-12 py-10 ">
+      <div
+        ref={ref}
+        className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 px-4 md:px-12 py-10"
+      >
         {/* Video 1 (Landscape) */}
-        <div className="w-full md:w-1/3 rounded overflow-hidden shadow-lg">
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full md:w-1/3 rounded overflow-hidden shadow-2xl"
+        >
           <ReactPlayer
             url={videoUrlLandscape}
-            playing
-            loop
-            muted
+            playing={true}
+            loop={true}
+            muted={true}
             width="100%"
-            height="80vh"
+            height="68vh"
             config={{
               file: {
                 attributes: {
@@ -30,10 +42,15 @@ const About = () => {
               },
             }}
           />
-        </div>
+        </motion.div>
 
         {/* Text Content */}
-        <div className="w-full md:w-1/3 text-left text-white">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={isInView ? { y: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="w-full md:w-1/3 text-left text-white"
+        >
           <p className="text-xl sm:text-2xl font-semibold leading-relaxed mb-4 text-center md:text-left">
             Achiever Building Solution Pvt. Ltd.
           </p>
@@ -46,10 +63,15 @@ const About = () => {
               exceptional agents.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Video 2 (Portrait) */}
-        <div className="w-full md:w-1/3 rounded overflow-hidden shadow-lg flex justify-center">
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full md:w-1/3 rounded overflow-hidden shadow-lg flex justify-center"
+        >
           <ReactPlayer
             url={videoUrlPortrait}
             playing
@@ -57,16 +79,16 @@ const About = () => {
             muted
             width="auto"
             height="80vh"
-            style={{ maxHeight: "400px", maxWidth: "100%" }} // limit max height if needed
+            style={{ maxHeight: "400px", maxWidth: "100%" }}
             config={{
               file: {
                 attributes: {
-                  style: { objectFit: "contain" }, // contain so no crop
+                  style: { objectFit: "contain" },
                 },
               },
             }}
           />
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom Section */}

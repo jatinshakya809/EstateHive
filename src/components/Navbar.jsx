@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav className={`border-b border-gray-400`}>
       {/* Top Bar */}
-      <div className="h-[6vh] font-medium gap-5 bg-gray-900 justify-center flex items-center text-xs sm:text-sm">
+      <div className="h-[5vh] font-medium gap-5 bg-gray-900 justify-center flex items-center text-xs sm:text-sm">
         <Link to="/inquiryForm" className="text-white cursor-pointer">
           Enquire Now
         </Link>
