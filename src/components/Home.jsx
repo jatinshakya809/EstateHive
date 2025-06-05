@@ -20,7 +20,8 @@ const Home = () => {
       </div>
       <div className="video-wrapper">
         <ReactPlayer
-          url="https://res.cloudinary.com/jatincloud809/video/upload/v1747997012/Archiever%20property/vf7vt3mop125mescbrl0.mp4" // or .m3u8 for HLS
+          url="https://res.cloudinary.com/jatincloud809/video/upload/f_auto,q_auto/v1747997012/Archiever%20property/vf7vt3mop125mescbrl0.mp4
+" // or .m3u8 for HLS
           muted={true}
           playing={true}
           width="100%"

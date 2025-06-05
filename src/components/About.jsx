@@ -5,9 +5,9 @@ import { motion, useInView } from "framer-motion";
 
 const About = () => {
   const videoUrlLandscape =
-    "https://res.cloudinary.com/jatincloud809/video/upload/v1749100329/Archiever%20property/r2z2dvtfhdbadt7fogj6.mp4";
+    "https://res.cloudinary.com/jatincloud809/video/upload/f_auto,q_auto/v1749100329/Archiever%20property/r2z2dvtfhdbadt7fogj6.mp4";
   const videoUrlPortrait =
-    "https://res.cloudinary.com/jatincloud809/video/upload/v1749100140/Archiever%20property/tomb5t2hisjvzyxe8pvp.mp4";
+    "https://res.cloudinary.com/jatincloud809/video/upload/f_auto,q_auto/v1749100140/Archiever%20property/tomb5t2hisjvzyxe8pvp.mp4";
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.2 });
@@ -103,7 +103,7 @@ const About = () => {
             playing
             loop
             muted
-            url="https://res.cloudinary.com/jatincloud809/video/upload/v1747999129/Archiever%20property/rv5ys4ls2enm6hramtkz.mp4"
+            url="https://res.cloudinary.com/jatincloud809/video/upload/f_auto,q_auto/v1747999129/Archiever%20property/rv5ys4ls2enm6hramtkz.mp4"
             width="100%"
             height="auto"
             style={{ borderRadius: "8px", aspectRatio: "16 / 9" }}

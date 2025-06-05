@@ -39,7 +39,7 @@ const IntroVideo = () => {
 
         {/* ReactPlayer */}
         <ReactPlayer
-          url="https://res.cloudinary.com/jatincloud809/video/upload/v1748757289/p7wxasttugttelcfg7bl.mp4"
+          url="https://res.cloudinary.com/jatincloud809/video/upload/f_auto,q_auto/v1748757289/p7wxasttugttelcfg7bl.mp4"
           playing
           muted={isMuted}
           controls={false}
