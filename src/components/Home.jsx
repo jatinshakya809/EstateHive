@@ -10,8 +10,7 @@ const Home = () => {
       <div className="bg-[#228B22] flex flex-col md:flex-row justify-between px-6 md:px-12 py-8 md:py-4">
         <div className="">
           <div className="text-white text-3xl md:text-4xl font-semibold mb-6 md:mb-0 leading-snug md:leading-normal">
-            Find a home that suits your <br />
-            lifestyle.
+            Find a home that suits your lifestyle.
           </div>
           <p className="text-yellow-500 text-xl md:text-2xl font-semibold mb-6 md:mb-0 leading-snug md:leading-normal">
             अपने प्लॉट पर तुरंत निर्माण प्रारम्भ करे ।

@@ -6,6 +6,7 @@ import ExploreMore from "../ExploreMore";
 import Footer from "../Footer";
 import PlotLayout from "../PlotLayot/PlotLayout";
 import AboutOwner from "../AboutUs/AboutOwner";
+import MoreImages from "../MoreImages";
 
 const LandingPage = () => {
   return (
@@ -13,6 +14,7 @@ const LandingPage = () => {
       <Home />
       <AboutOwner />
       <About />
+      <MoreImages />
       <PlotLayout />
       <ExploreMore />
     </div>

@@ -17,7 +17,7 @@ const StickyIcons = () => {
 
       {/* Phone Call */}
       <a
-        href="tel:+919717731887" // Replace with your phone number
+        href="tel:+919717731887"
         className="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition"
       >
         <FaPhoneAlt size={20} />
@@ -25,7 +25,7 @@ const StickyIcons = () => {
 
       {/* Gmail */}
       <a
-        href="mailto:ashukashyap844@gmail.com" // Replace with your email
+        href="mailto:ashukashyap844@gmail.com"
         className="bg-red-500 text-white p-3 rounded-full shadow-lg hover:bg-red-600 transition"
       >
         <FaEnvelope size={20} />

@@ -11,17 +11,17 @@ const AboutOwner = () => {
   return (
     <div ref={ref} className="max-w-4xl mx-4 md:mx-auto my-20">
       <motion.div
-        className="p-6 bg-white shadow-2xl rounded-2xl"
+        className="p-6 bg-[#F0FFF0] shadow-2xl rounded-2xl"
         initial={{ x: -100, opacity: 0 }}
         animate={isInView ? { x: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="flex flex-col md:flex-row items-center gap-8 min-h-[300px]">
           {/* Left side: Circle image with border */}
-          <div className="rounded-full bg-green-600 p-4 flex justify-center items-center w-48 h-48 md:w-64 md:h-64 mx-auto md:mx-0 flex-shrink-0">
+          <div className="rounded-full bg-green-600 p-4 flex justify-center items-center w-48 h-48 md:w-70 md:h-70 mx-auto md:mx-0 flex-shrink-0">
             <img
               className="rounded-full object-cover w-full h-full border-8 border-white"
-              src="https://res.cloudinary.com/jatincloud809/image/upload/v1749104793/Archiever%20property/ka2netxqmxgvxh8jbzld.jpg"
+              src="/nmqo4ts8gsrrulwfjmfg.jpg"
               alt="Owner"
             />
           </div>

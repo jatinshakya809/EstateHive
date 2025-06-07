@@ -25,9 +25,7 @@ const Navbar = () => {
         <Link to="/inquiryForm" className="text-white cursor-pointer">
           Enquire Now
         </Link>
-        <div className="text-white gap-2 items-center flex cursor-pointer">
-          <IoMdSettings className="inline text-white" /> Preferences
-        </div>
+        <div className="text-white gap-2 items-center flex cursor-pointer"></div>
       </div>
 
       {/* Main Navbar */}
@@ -35,12 +33,12 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 text-2xl font-bold">
           <img
-            src="https://res.cloudinary.com/jatincloud809/image/upload/v1748065028/Archiever%20property/srlsbfp2hizvo1xmh0b9.png"
+            src="/Logo.png"
             alt="Company Logo"
-            className="h-12 w-auto" // Adjust height as needed
+            className="h-26  w-auto" // Adjust height as needed
             // Ensures white bg is preserved
           />
-          Achiever Building Solution Pvt. Ltd.
+          Nature Green Real Estate
         </Link>
 
         {/* Desktop Menu */}
@@ -85,7 +83,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#1F7D53] text-white px-4 py-4 space-y-4 uppercase text-base">
+        <div className="md:hidden bg-[#228B22] text-white px-4 py-4 space-y-4 uppercase text-base">
           <Link
             to="/search" // assuming you have a search page route
             className="flex items-center gap-2 border-b border-yellow-500 pb-2"
@@ -103,6 +101,7 @@ const Navbar = () => {
           </Link>
 
           <Link
+            to="/agents"
             className="block border-b border-yellow-500 pb-2"
             onClick={() => setMobileMenuOpen(false)}
           >
@@ -116,10 +115,6 @@ const Navbar = () => {
           >
             Stories
           </Link>
-
-          <button className="w-full mt-2 px-4 py-2 border border-yellow-300 uppercase cursor-pointer text-white hover:text-orange-200 transition">
-            Sell with Us
-          </button>
         </div>
       )}
     </nav>

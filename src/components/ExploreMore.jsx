@@ -48,7 +48,7 @@ const ExploreMore = () => {
           <p className="text-sm md:text-base uppercase tracking-wide text-white">
             More to know
           </p>
-          <p className="text-3xl text-white md:text-5xl font-semibold leading-snug">
+          <p className="text-3xl text-shadow-lg text-white md:text-5xl font-semibold leading-snug">
             अपने प्लाट पर <br /> तुरंत निर्माण प्रारंभ करे |
           </p>
           <p className="max-w-3xl mx-auto text-white text-lg md:text-base">
@@ -66,11 +66,11 @@ const ExploreMore = () => {
           >
             {getVisibleImages().map((src, index) => (
               <div key={index} className="w-full sm:w-1/2 md:w-1/4 p-2">
-                <div className="bg-white border border-green-700 rounded-2xl shadow-lg overflow-hidden h-full flex items-center justify-center">
+                <div className="bg-white border-2 border-yellow-500 shadow-lg overflow-hidden h-full flex items-center justify-center">
                   <img
                     src={src}
                     alt={`carousel-${index}`}
-                    className="w-full h-64 sm:h-72 md:h-96 object-cover rounded-2xl"
+                    className="w-full h-64 sm:h-72 md:h-96 object-cover "
                   />
                 </div>
               </div>

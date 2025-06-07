@@ -4,8 +4,11 @@ import {
   FaInstagram,
   FaGithub,
   FaTwitter,
+  FaWhatsapp,
+  FaPhoneAlt,
   FaYoutube,
 } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
 
 const Footer = () => {
   return (
@@ -14,12 +17,8 @@ const Footer = () => {
         {/* Brand */}
         <div>
           <div className="text-white text-lg font-bold mb-4 flex items-center gap-2">
-            <img
-              className="h-12 w-auto"
-              src="https://res.cloudinary.com/jatincloud809/image/upload/v1748065028/Archiever%20property/srlsbfp2hizvo1xmh0b9.png"
-              alt=""
-            />
-            Achiever Building Solution Pvt. Ltd.
+            <img className="h-12 w-auto" src="/Logo.png" alt="" />
+            Nature Green Real Estate
           </div>
           <p className="mb-4 text-sm sm:text-base">
             अपने प्लॉट पर तुरंत निर्माण प्रारम्भ करे ।
@@ -67,74 +66,70 @@ const Footer = () => {
         <div>
           <h3 className="text-white font-semibold mb-3">Properties</h3>
           <ul className="space-y-2 text-sm sm:text-base">
-            <li className="hover:text-white cursor-pointer transition">
-              Residential
-            </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Commercial
-            </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Luxury Homes
-            </li>
-            <li className="hover:text-white cursor-pointer transition">
-              New Developments
-            </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Open Houses
-            </li>
+            <li className="">Residential</li>
+            <li className="">Commercial</li>
+            <li className="">Luxury Homes</li>
+            <li className="">New Developments</li>
+            <li className="">Open Houses</li>
           </ul>
         </div>
 
         <div>
           <h3 className="text-white font-semibold mb-3">Services</h3>
           <ul className="space-y-2 text-sm sm:text-base">
-            <li className="hover:text-white cursor-pointer transition">
-              Buying
-            </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Selling
-            </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Property Management
-            </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Mortgage Advice
-            </li>
+            <li className="">Buying</li>
+            <li className="">Selling</li>
+            <li className="">Property Management</li>
+            <li className="">Mortgage Advice</li>
           </ul>
         </div>
 
         <div>
           <h3 className="text-white font-semibold mb-3">About Us</h3>
           <ul className="space-y-2 text-sm sm:text-base">
-            <li className="hover:text-white cursor-pointer transition">
-              Our Story
-            </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Meet the Team
-            </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Careers
-            </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Contact
-            </li>
+            <li className="">Our Story</li>
+            <li className="">Meet the Team</li>
+            <li className="">Careers</li>
+            <li className="">Contact</li>
           </ul>
         </div>
 
-        <div>
-          <h3 className="text-white font-semibold mb-3">Legal</h3>
+        <div className="text-white">
+          <h3 className="font-semibold mb-3 text-lg">Contact Details</h3>
           <ul className="space-y-2 text-sm sm:text-base">
-            <li className="hover:text-white cursor-pointer transition">
-              Terms of Service
+            {/* Phone Link */}
+            <li className="hover:text-white transition flex items-center gap-2">
+              <a
+                href="tel:+919717731887"
+                className="flex items-center gap-2 cursor-pointer"
+              >
+                <FaPhoneAlt /> +91-9717731887
+              </a>
             </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Privacy Policy
+
+            {/* WhatsApp Link */}
+            <li className="hover:text-white transition flex items-center gap-2">
+              <a
+                href="https://wa.me/919717731887"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 cursor-pointer"
+              >
+                <FaWhatsapp /> +91-9717731887
+              </a>
             </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Licensing
-            </li>
-            <li className="hover:text-white cursor-pointer transition">
-              Disclosures
+
+            {/* Email Link */}
+            <li className="hover:text-white transition flex items-center gap-2">
+              <a
+                href="mailto:ashukashyap844@gmail.com"
+                className="flex items-center gap-2 cursor-pointer"
+              >
+                <IoIosMail />
+                <span className="text-[12px] sm:text-sm">
+                  ashukashyap844@gmail.com
+                </span>
+              </a>
             </li>
           </ul>
         </div>

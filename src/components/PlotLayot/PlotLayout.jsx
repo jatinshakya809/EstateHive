@@ -26,9 +26,9 @@ const PlotLayout = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {[
-            "https://res.cloudinary.com/jatincloud809/image/upload/v1747999727/Archiever%20property/q4wippigt20q7uebvmg7.jpg",
-            "https://res.cloudinary.com/jatincloud809/image/upload/v1747999726/Archiever%20property/l6kl68acynrdporr2ecy.jpg",
-            "https://res.cloudinary.com/jatincloud809/image/upload/v1747999726/Archiever%20property/vojkrni5i3wfwuqp45do.jpg",
+            "/q4wippigt20q7uebvmg7.jpg",
+            "/l6kl68acynrdporr2ecy.jpg",
+            "/vojkrni5i3wfwuqp45do.jpg",
           ].map((src, index) => (
             <div
               key={index}
