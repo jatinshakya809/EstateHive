@@ -7,7 +7,7 @@ const agentsData = [
     state: "Rajasthan",
     city: "Jaipur",
     location: "Vaishali Nagar",
-    image: "https://via.placeholder.com/100?text=Rajesh",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const agentsData = [
     state: "Kerala",
     city: "Kochi",
     location: "Marine Drive",
-    image: "https://via.placeholder.com/100?text=Anita",
+    image: "https://randomuser.me/api/portraits/women/65.jpg",
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const agentsData = [
     state: "Maharashtra",
     city: "Mumbai",
     location: "Andheri West",
-    image: "https://via.placeholder.com/100?text=Vikram",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const agentsData = [
     state: "Punjab",
     city: "Amritsar",
     location: "Ranjit Avenue",
-    image: "https://via.placeholder.com/100?text=Simran",
+    image: "https://randomuser.me/api/portraits/women/12.jpg",
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ const agentsData = [
     state: "Uttar Pradesh",
     city: "Lucknow",
     location: "Hazratganj",
-    image: "https://via.placeholder.com/100?text=Rahul",
+    image: "https://randomuser.me/api/portraits/men/27.jpg",
   },
   {
     id: 6,
@@ -47,7 +47,7 @@ const agentsData = [
     state: "Karnataka",
     city: "Bangalore",
     location: "Indiranagar",
-    image: "https://via.placeholder.com/100?text=Divya",
+    image: "https://randomuser.me/api/portraits/women/45.jpg",
   },
   {
     id: 7,
@@ -55,7 +55,7 @@ const agentsData = [
     state: "Delhi",
     city: "New Delhi",
     location: "Saket",
-    image: "https://via.placeholder.com/100?text=Amit",
+    image: "https://randomuser.me/api/portraits/men/19.jpg",
   },
   {
     id: 8,
@@ -63,7 +63,7 @@ const agentsData = [
     state: "Himachal Pradesh",
     city: "Shimla",
     location: "Mall Road",
-    image: "https://via.placeholder.com/100?text=Neha",
+    image: "https://randomuser.me/api/portraits/women/26.jpg",
   },
   {
     id: 9,
@@ -71,7 +71,7 @@ const agentsData = [
     state: "Gujarat",
     city: "Ahmedabad",
     location: "Navrangpura",
-    image: "https://via.placeholder.com/100?text=Kunal",
+    image: "https://randomuser.me/api/portraits/men/40.jpg",
   },
   {
     id: 10,
@@ -79,7 +79,7 @@ const agentsData = [
     state: "West Bengal",
     city: "Kolkata",
     location: "Salt Lake",
-    image: "https://via.placeholder.com/100?text=Priya",
+    image: "https://randomuser.me/api/portraits/women/58.jpg",
   },
   {
     id: 11,
@@ -87,7 +87,7 @@ const agentsData = [
     state: "Goa",
     city: "Panaji",
     location: "Campal",
-    image: "https://via.placeholder.com/100?text=Yash",
+    image: "https://randomuser.me/api/portraits/men/53.jpg",
   },
   {
     id: 12,
@@ -95,14 +95,14 @@ const agentsData = [
     state: "Tamil Nadu",
     city: "Chennai",
     location: "Adyar",
-    image: "https://via.placeholder.com/100?text=Meera",
+    image: "https://randomuser.me/api/portraits/women/31.jpg",
   },
 ];
 
 const AgentsPage = () => {
   return (
     <div className="p-8">
-      <h2 className="text-2xl font-bold mb-6 text-center text-[#1F7D53]">
+      <h2 className="text-2xl font-bold mb-6 text-center text-white">
         Our Real Estate Agents
       </h2>
 
