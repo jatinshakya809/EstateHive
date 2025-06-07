@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import StateProperty from "./StateProperty";
 
@@ -55,30 +54,28 @@ const Properties = () => {
         ))}
       </div>
 
-      {/* Filter Panel */}
-      <div className="w-full bg-white py-4 px-4 sm:px-8 shadow-md">
-        {/* Mobile Toggle */}
-        <div className="flex justify-between items-center sm:hidden">
-          <h2 className="font-semibold text-base">Filters</h2>
-          <button
-            onClick={() => setShowFilters((prev) => !prev)}
-            className="text-sm flex items-center gap-1 text-[#1F7D53] font-medium"
-          >
-            {showFilters ? "Hide" : "Show"} Filters
-            {showFilters ? (
-              <FaChevronUp size={14} />
-            ) : (
-              <FaChevronDown size={14} />
-            )}
-          </button>
-        </div>
-
-        {/* Filter Content */}
-        <div
-          className={`mt-4 sm:mt-0 flex flex-wrap gap-4 sm:gap-6 transition-all duration-300 ${
-            showFilters ? "flex" : "hidden sm:flex"
-          }`}
+      {/* Filter Toggle Button (for all devices) */}
+      <div className="w-full bg-white px-4 sm:px-8 py-3 flex justify-end">
+        <button
+          onClick={() => setShowFilters((prev) => !prev)}
+          className="text-sm flex items-center gap-1 text-[#1F7D53] font-medium"
         >
+          {showFilters ? "Hide" : "Show"} Filters
+          {showFilters ? (
+            <FaChevronUp size={14} />
+          ) : (
+            <FaChevronDown size={14} />
+          )}
+        </button>
+      </div>
+
+      {/* Filter Panel */}
+      <div
+        className={`w-full bg-white px-4 sm:px-8 transition-all duration-300 ${
+          showFilters ? "block" : "hidden"
+        }`}
+      >
+        <div className="flex flex-wrap gap-4 sm:gap-6 py-4 shadow-md">
           <div className="flex flex-col min-w-[160px]">
             <label className="text-xs font-medium text-gray-600 mb-1">
               State
@@ -156,21 +153,26 @@ const Properties = () => {
       </div>
 
       {/* Property Listings */}
-      <div className="my-8 p-4 md:px-12">
-        <h2 className="text-2xl font-semibold text-white mb-6">
+      <div className="my-12 px-4 md:px-12">
+        <h2 className="text-3xl font-bold text-center text-white mb-10 tracking-wide">
           Properties in {selectedState.replace(/([A-Z])/g, " $1").trim()}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {propertyData[selectedState]?.map((prop) => (
             <div
               key={prop.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300"
             >
-              <img src={prop.img} className="w-full h-full object-cover" />
+              <img
+                src={prop.img}
+                alt={prop.title}
+                className="w-full h-56 sm:h-64 object-cover"
+              />
             </div>
           ))}
         </div>
       </div>
+
       <StateProperty />
     </div>
   );
